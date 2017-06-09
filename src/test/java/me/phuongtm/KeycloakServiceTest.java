@@ -1,5 +1,6 @@
 package me.phuongtm;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class KeycloakServiceTest {
 
     @Test
     public void shouldSuccessfulAddNewAccount() throws Exception {
-        service.createAccount("the_new_thang", "superman");
+        int result = service.createAccount("the_new_thang", "superman");
+        Assert.assertEquals(201, result);
     }
 }
